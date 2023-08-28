@@ -26,3 +26,12 @@ def rental_car_cost(d):
 # write a function that removes first and last characters of a string
 def remove_chars(string):
     return string[1:-1]
+
+#codewars algo 4
+# given a number, multiply it by 8 if it is even and 9 otherwise
+
+def simple_multiplication(number):
+    if number % 2 == 0:
+        return number * 8
+    else:
+        return number * 9
