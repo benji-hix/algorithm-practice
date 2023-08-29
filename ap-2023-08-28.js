@@ -12,13 +12,13 @@ const expected3 = "olleh";
 const str4 = "";
 const expected4 = "";
 
-// function reverseString(str) {
-//     strNew = "";
-//     for (i = str.length - 1; i >=0; i--) {
-//         strNew += str[i];
-//     }
-//     return strNew;
-// }
+function reverseString(str) {
+    strNew = "";
+    for (i = str.length - 1; i >=0; i--) {
+        strNew += str[i];
+    }
+    return strNew;
+}
 
 function reverseString(str) {
     return str.split('').reverse().join('');

@@ -140,33 +140,3 @@ function solution(number) {
   return ans;
 }
 console.log(solution(1444));
-
-
-
-
-
-
-function benjiNumeral(number) {
-var benjiNumerals = {
-    a: 30,
-    ba: 27,
-    b: 3,
-    ca: 29,
-    c: 1
-}
-
-var answerBenji = "";
-
-while (number > 0) {
-    for (character in benjiNumerals) {
-        if (benjiNumerals[character] <= number) {
-            answerBenji += character;
-            number -= answerBenji[character];
-            break;
-        }
-    }
-}
-return answerBenji;
-}
-
-console.log(benjiNumeral(52));
