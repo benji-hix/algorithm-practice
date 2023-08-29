@@ -107,10 +107,10 @@ function solution(number) {
 
 
 
-// intended solution -- significantly more concise/
-// utilizing looping through an object 
+// intended solution -- significantly more concise and
+// utilizes looping through an object 
+
 function solution(number) {
-  // convert the number to a roman numeral
   var roman = {
     M: 1000,
     CM: 900,
@@ -139,4 +139,3 @@ function solution(number) {
   }
   return ans;
 }
-console.log(solution(1444));
