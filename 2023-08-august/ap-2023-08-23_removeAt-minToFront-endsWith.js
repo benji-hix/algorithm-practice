@@ -23,6 +23,13 @@ var removeIdx3 = -3;
 var expected3 = null;
 var arr3Expected = ["a", "b", "c"];
 
+/**
+ * Removes and returns the item at the given idx from the given array and
+ * shifts the remaining items to fill the empty space created by the item
+ * being removed.
+ * - Time: O(?).
+*/
+
 
 function removeAt(items, idx) {
     

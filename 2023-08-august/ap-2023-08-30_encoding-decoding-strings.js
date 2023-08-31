@@ -85,7 +85,8 @@ function decodeStr(str) {
         arrayStr.push(str[i]);
         i++;
       }
-      //if character is numeric, join it with subsequent numeric characters then push to array
+      // if character is numeric, join it with subsequent numeric characters,
+      // turn into integer, then push to array
       else {
         let joinedNumber = ""
         let j = 0;
@@ -94,16 +95,15 @@ function decodeStr(str) {
             j++;
         }
         arrayStr.push(+joinedNumber)
-        i = i + j;
+        i = i + j; // advance past any numeric characters we just tested for
      }
     }
 
-    // iterate through the array and push each individual character  a number of times
-    // equal to its subsequent integer 
-    for (i = 0; i < arrayStr.length; i += 2) { // note the 2 because we only want to act on characters, not integers
-      while (arrayStr[i + 1] > 0) {
-        decodedStr += arrayStr[i];
-        arrayStr[i + 1]--;
+    // iterate through our array and push each individual character to the answer string
+    for (i = 0; i < arrayStr.length; i += 2) { // note the 2 because we only want to push characters, not integers
+      while (arrayStr[i + 1] > 0) { // character-pushing loop; integer determines when it stops
+        decodedStr += arrayStr[i]; 
+        arrayStr[i + 1]--; // decreasing our integer everytime we push a character
       }
     } 
     
@@ -112,4 +112,3 @@ function decodeStr(str) {
 
 console.log(decodeStr(str1) + " should be " + expected1)
 console.log(decodeStr(str2) + " should be " + expected2)
-

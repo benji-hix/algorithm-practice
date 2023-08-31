@@ -1,4 +1,5 @@
 // algo 1
+// reversing a string
 
 const str1 = "creature";
 const expected1 = "erutaerc";
