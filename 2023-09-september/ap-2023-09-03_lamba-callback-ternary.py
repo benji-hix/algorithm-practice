@@ -1,5 +1,6 @@
-# in both python and JavaScript, construct a function utilizing 
-# ternary operators and a callback function.
+# in both python and JavaScript, construct a 
+# function utilizing ternary operators
+# and a callback function.
 # Then, call the function utilizing lambda.
 
 def greater_than_10(callback, x):
