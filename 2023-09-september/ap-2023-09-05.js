@@ -30,6 +30,8 @@ function stringDedupe(str) {
     }
     return newStr
 }
+
+
 console.log(stringDedupe(str1));
 console.log(expected1, "(expected)")
 console.log(stringDedupe(str2));
@@ -71,6 +73,7 @@ function reverseWords(str) {
 
     return newStr
 }
+
 console.log(reverseWords(strA)) //expectedA: olleh
 console.log(expectedA, "(expected)")
 console.log(reverseWords(strB)) //expectedB: olleh dlrow
