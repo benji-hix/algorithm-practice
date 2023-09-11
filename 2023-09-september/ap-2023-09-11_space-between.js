@@ -21,17 +21,15 @@ const queue4 = [];
 const expected4 = true;
 
 function socialDistancingEnforcer(queue) {
-    //* start at the first 1 in the array
-    start = queue.indexOf(1);
     let count = 0
 
-    //* loop through array
-    for (let i = start + 1; i < queue.length; i++) {
-        //* count up by 1 when encountering a 0
+    //* loop through array, starting after the first 1
+    for (let i = queue.indexOf(1) + 1; i < queue.length; i++) {
+        //* count every 0 encountered
         if (queue[i] == 0) count++;
-        //* return false if encountering a 1 before 6 0s
+        //* return false if encountering a 1 before six 0s
         else if (count < 6) return false;
-        //* reset count if 
+        //* otherwise reset count and continue loop
         else count = 0;
         }
 
@@ -39,11 +37,7 @@ function socialDistancingEnforcer(queue) {
     return true
 }
 
-console.log(socialDistancingEnforcer(queue1))
-console.log(expected1)
-console.log(socialDistancingEnforcer(queue2))
-console.log(expected2)
-console.log(socialDistancingEnforcer(queue3))
-console.log(expected3)
-console.log(socialDistancingEnforcer(queue4))
-console.log(expected4)
+console.log(socialDistancingEnforcer(queue1) + ' should be ' + expected1)
+console.log(socialDistancingEnforcer(queue2) + ' should be ' + expected2)
+console.log(socialDistancingEnforcer(queue3) + ' should be ' + expected3)
+console.log(socialDistancingEnforcer(queue4) + ' should be ' + expected4)
