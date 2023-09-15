@@ -44,3 +44,62 @@ console.log(interleaveArrays(arrA3, arrB3) + ' should be ' + expected3)
 console.log(interleaveArrays(arrA4, arrB4) + ' should be ' + expected4)
 
 /*****************************************************************************/
+
+/* 
+  Given an array of integers
+  return the first integer from the array that is not repeated anywhere else
+
+  If there are multiple non-repeated integers in the array,
+  the "first" one will be the one with the lowest index.
+*/
+
+const numsA = [3, 5, 4, 3, 4, 6, 5, 7];
+const expectedA = 6;
+
+const numsB = [3, 5, 5];
+const expectedB = 3;
+
+const numsC = [3, 3, 5];
+const expectedC = 5;
+
+const numsD = [5];
+const expectedD = 5;
+
+const numsE = [];
+const expectedE = null;
+
+//~ solution with dictonary
+function firstNonRepeated(nums) {
+    
+    //* create object that counts occurences of each element in array
+    let object = {};
+    for (var i = 0; i < nums.length; i++){
+        if (nums[i] in object) object[nums[i]]++;
+        else object[nums[i]] = 1;
+    }
+
+    //* loop through array again; if occurence count == 1, return 
+    for (let j = 0; j < nums.length; j++){
+        if (object[nums[j]] == 1) return nums[j];
+    }
+
+    //* default return null
+    return null;
+}
+
+//~ solution with built-in methods .filter(), .lastIndexOf()
+function firstNonRepeated(nums) {
+
+    //* create an array of values where first index == last index AKA occur only once
+    let uniqueNumbs = nums.filter(num => nums.indexOf(num) === nums.lastIndexOf(num))
+
+    //* return first value in new array, default to null if array is is empty
+    return (uniqueNumbs.length) ? uniqueNumbs[0] : null
+}
+
+console.log(firstNonRepeated(numsA) + ' should be ' + expectedA)
+console.log(firstNonRepeated(numsB) + ' should be ' + expectedB)
+console.log(firstNonRepeated(numsC) + ' should be ' + expectedC)
+console.log(firstNonRepeated(numsD) + ' should be ' + expectedD)
+console.log(firstNonRepeated(numsE) + ' should be ' + expectedE)
+
