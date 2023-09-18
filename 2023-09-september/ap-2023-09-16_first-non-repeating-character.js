@@ -13,17 +13,16 @@ If a string contains all repeating characters, it should return an empty string 
 
 function firstNonRepeatingLetter(s) {
     for (const char of s) {
-
-        if  ( s.includes(char.toLowerCase()) && s.includes(char.toUpperCase()) )  {
-            null
-        }
-
-        else if ((s.indexOf(char) == s.lastIndexOf(char.toLowerCase())) || (s.indexOf(char) == s.lastIndexOf(char.toUpperCase())) ) {
-            return char
+        if (s.includes(char.toLowerCase()) && s.includes(char.toUpperCase())) {
+            null;
+        } else if (
+            s.indexOf(char) == s.lastIndexOf(char.toLowerCase()) ||
+            s.indexOf(char) == s.lastIndexOf(char.toUpperCase())
+        ) {
+            return char;
         }
     }
-    return ''
+    return '';
 }
 
-console.log(firstNonRepeatingLetter('s,TreSS'))
-
+console.log(firstNonRepeatingLetter('s,TreSS'));

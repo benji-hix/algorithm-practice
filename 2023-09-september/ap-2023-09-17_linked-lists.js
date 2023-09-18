@@ -17,26 +17,23 @@ function loop_size(node) {
     var turtle = node;
     var rabbit = node;
 
-    //* first, we need turtle and rabbit to be inside the loop on the same node
+    //* first, we need turtle and rabbit to be inside the loop on the sameF node
     //* so, have the rabbit move twice as fast as the turtle
     //* this will guarantee that it completes one cycle of the list before
     //* they are on the same node
     do {
         turtle = turtle.getNext();
         rabbit - rabbit.getNext().getNext();
-    }
-    while (turtle != rabbit);
+    } while (turtle != rabbit);
 
     //* then, freeze the turtle and have the rabbit complete another lap at normal pace
-    //* while counting up. 
+    //* while counting up.
     //* once rabbit reaches turtle again, we've found the length of the closed list
     let count = 0;
     do {
         count++;
-        rabbit = rabbit.getNext()
-    }
-    while (turtle != rabbit)
+        rabbit = rabbit.getNext();
+    } while (turtle != rabbit);
 
-    return count 
-
+    return count;
 }
