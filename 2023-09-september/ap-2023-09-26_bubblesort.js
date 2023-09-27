@@ -43,6 +43,6 @@ function swap(array, index) {
 //     return array;
 // }
 
-test = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+test = [1, 3, 5, 8, 7, 9, 4];
 console.log(bubblesort(test));
-console.log(`This took ${performance.now() - start} milliseconds to run`);
+console.log(`PERFORMANCE: script ran for ${performance.now() - start} milliseconds.`);
