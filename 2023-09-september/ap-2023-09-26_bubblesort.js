@@ -5,14 +5,13 @@ const start = performance.now();
 function bubblesort(array) {
     let length = array.length - 1;
     let swapped;
-    //* iterate througoh the array until there is a pass where no
-    //* elements are swapped
+
     do {
         swapped = false;
         for (let j = 0; j < length; j++) {
             if (array[j] > [array[j + 1]]) {
                 swap(array, j)
-                swapped = true; //* if swap occured, iteration will continue
+                swapped = true; 
             }
         }
     } while (swapped);
