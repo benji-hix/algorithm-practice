@@ -34,3 +34,4 @@ const obj3 = Object.assign(Object.create(proto), {
     age: 99,
 });
 
+console.log(entries(obj3))
