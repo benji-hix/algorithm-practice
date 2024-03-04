@@ -95,23 +95,17 @@ function getGrade (s1, s2, s3) {
 
 
 //below is equivalent output with significantly less concise style 
-function getGrade (s1, s2, s3) {
+function getGradeCase (s1, s2, s3) {
 
     var avg = (s1 + s2 + s3)/3;
     
-    if (avg < 60) {
-            return 'F';
-    }
-    else if (avg < 70) {
-        return 'D';
-    }
-    else if (avg < 80) {
-        return 'C';
-    }
-    else if (avg < 90) {
-        return 'B';
-    }
-    else {
-        return 'A';
+    switch (true) {
+        case (avg < 60): return "F";
+        case (avg < 70): return "D";
+        case (avg < 80): return "C";
+        case (avg < 90): return "B";
+        default: return "A";
     }
 }
+
+console.log(getGradeCase(80, 70, 70));
